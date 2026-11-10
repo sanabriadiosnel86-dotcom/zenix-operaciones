@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/plus-jakarta-sans';
+
+/* Variables de diseño de Zenix: cambiá la paleta acá y se actualiza toda la interfaz. */
+@theme {
+  --color-brand: #12be8d; /* Principal: acentos, íconos, foco */
+  --color-brand-strong: #0a7d5c; /* Botones con texto blanco (contraste AA) */
+  --color-deep: #064c40; /* Títulos */
+  --color-mint: #f1f8f4; /* Fondo */
+  --color-mint-2: #e2f4ea; /* Fondos de realce */
+  --color-surface: #ffffff;
+  --color-ink: #202a27; /* Texto */
+  --color-muted: #55655f;
+  --color-line: #dbe8e1;
+  --color-danger: #b42318;
+  --color-danger-soft: #fdecea;
+  --color-warn: #8a5300;
+  --color-warn-soft: #fff4dc;
+  --color-info: #175cd3;
+  --color-info-soft: #e8f1fe;
+  --font-sans: 'Plus Jakarta Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --shadow-card: 0 1px 2px rgb(6 76 64 / 0.05), 0 4px 16px rgb(6 76 64 / 0.05);
+}
+
+html { background: var(--color-mint); color: var(--color-ink); -webkit-text-size-adjust: 100%; }
+body { font-family: var(--font-sans); min-height: 100dvh; font-feature-settings: 'tnum' 1; }
+:focus-visible { outline: 2px solid var(--color-brand-strong); outline-offset: 2px; border-radius: 6px; }
+input, select, textarea { font-size: 16px; } /* evita el zoom automático de iOS */
+@media (min-width: 1024px) { input, select, textarea { font-size: 14px; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+/* Evita desbordes horizontales en celular: los hijos de grillas y filas pueden achicarse y cortar texto. */
+.grid > *, .flex > * { min-width: 0; }
